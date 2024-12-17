@@ -10,7 +10,7 @@ os.makedirs(".log", exist_ok=True)
 logging.basicConfig(
     level=logging.INFO, 
     format="%(asctime)s - %(levelname)s - %(message)s", 
-    handlers=[logging.FileHandler(f".log/parquetize-{RUN_DATE}.log")]
+    handlers=[logging.FileHandler(f".log/etl-parquetize-{RUN_DATE}.log")]
 )
 
 def save_file_as_parquet(f: str):

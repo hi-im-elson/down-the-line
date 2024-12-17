@@ -1,0 +1,5 @@
+# This file was automatically generated
+name: js_tennis
+type: duckdb
+options:
+  filename: ../../../data/db/js-tennis.duckdb
