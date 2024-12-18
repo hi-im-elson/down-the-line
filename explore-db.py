@@ -1,7 +1,11 @@
 import duckdb
 
-con = duckdb.connect("data/db/js-tennis.duckdb")
+con = duckdb.connect("data/db/match_tracking.duckdb")
 
-results = con.sql("select * from matches limit 1;")
+results = con.sql("select * from raw.matches limit 1;")
+
+# con.sql("drop table if exists main.cleansed_matches")
+
+# results = con.sql("show all tables")
 
 print(results)

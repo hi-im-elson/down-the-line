@@ -1,0 +1,2 @@
+select *
+from stg.matches;

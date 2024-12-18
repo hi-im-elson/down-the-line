@@ -13,11 +13,10 @@ logging.basicConfig(
     handlers=[logging.FileHandler(f".log/etl-duckdb-{RUN_DATE}.log")]
 )
 
-con = duckdb.connect("data/db/js-tennis.duckdb")
-
-con.sql("drop table if exists raw_matches;")
+con = duckdb.connect("data/db/match_tracking.duckdb")
 
 con.sql("create schema if not exists raw;")
+con.sql("create schema if not exists stg;")
 
 con.sql("""
     create or replace table raw.matches as (
