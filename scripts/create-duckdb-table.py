@@ -15,4 +15,12 @@ logging.basicConfig(
 
 con = duckdb.connect("data/db/js-tennis.duckdb")
 
-con.sql("create or replace table matches as select * from 'data/parquet/charting-m-matches.parquet'")
+con.sql("drop table if exists raw_matches;")
+
+con.sql("create schema if not exists raw;")
+
+con.sql("""
+    create or replace table raw.matches as (
+        select * 
+        from 'data/parquet/charting-m-matches.parquet');
+""")

@@ -1,0 +1,6 @@
+version: 2
+
+sources:
+  - name: js_tennis
+    tables:
+      - name: raw_matches
