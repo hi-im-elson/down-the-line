@@ -5,3 +5,5 @@ sources:
     tables:
       - name: matches
         description: "Match info including players, tournament, surface"
+      - name: shot_direction
+        description: "Frequency of shot direction and hitting side"
