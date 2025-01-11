@@ -1,4 +1,6 @@
 from dash import Dash, html, dcc, callback, Output, Input
+import dash_bootstrap_components as dbc
+from dash_bootstrap_templates import load_figure_template
 import plotly.express as px
 import pandas as pd
 import duckdb
@@ -7,7 +9,8 @@ con = duckdb.connect("data/db/match_tracking.duckdb", read_only=True)
 
 shotDirectionDF = con.sql("select * from stg.shot_direction").df()
 
-app = Dash()
+app = Dash(external_stylesheets=[dbc.themes.COSMO])
+load_figure_template('COSMO')
 
 app.layout = [
     html.H1(children='Player Shot Preference', style={'textAlign':'center'}),
